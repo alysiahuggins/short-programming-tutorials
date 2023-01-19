@@ -2,6 +2,15 @@
 
 This is an example pet name generator app used in the OpenAI API [quickstart tutorial](https://beta.openai.com/docs/quickstart). It uses the [Next.js](https://nextjs.org/) framework with [React](https://reactjs.org/). Check out the tutorial or follow the instructions below to get set up.
 
+## NOTE
+
+I have recorded this as a short video on tiktok, instagram and youtube shorts showing how to get started using chatgpt to create your own summarizer bot!
+To see the videos follow me on social media
+Youtube - https://youtube.com/alysiatech
+Instagram - https://instagram.com/alysia.tech
+Tiktok - https://tiktok.com/@alysiatech
+Twitter - https://twitter.com/alysiatech
+
 ## Setup
 
 1. If you don’t have Node.js installed, [install it from here](https://nodejs.org/en/)
