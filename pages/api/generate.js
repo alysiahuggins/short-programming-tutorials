@@ -26,11 +26,12 @@ export default async function (req, res) {
   }
 
   try {
-    const completion = await openai.createCompletion({
-      model: "text-davinci-003",
-      prompt: generatePrompt(animal),
-      temperature: 0.6,
-    });
+    // const completion = await openai.createCompletion({
+    //   model: "text-davinci-003",
+    //   prompt: generatePrompt(animal),
+    //   temperature: 0.6,
+    // });
+    const completion = await generateSummary(animal);
     res.status(200).json({ result: completion.data.choices[0].text });
   } catch(error) {
     // Consider adjusting the error handling logic for your use case
@@ -60,3 +61,17 @@ Names: Ruff the Protector, Wonder Canine, Sir Barks-a-Lot
 Animal: ${capitalizedAnimal}
 Names:`;
 }
+
+async function generateSummary(text){
+  const response = await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: `${text} Tl;dr`,
+    temperature: 0.7,
+    max_tokens: 60,
+    top_p: 1.0,
+    frequency_penalty: 0.0,
+    presence_penalty: 1,
+  });
+  return response;
+}
+
